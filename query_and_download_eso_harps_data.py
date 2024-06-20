@@ -12,6 +12,7 @@ from astropy.io import fits
 import glob
 from concurrent.futures import ProcessPoolExecutor
 import time
+import random
 
 # Verify the version of pyvo 
 from pkg_resources import parse_version
@@ -39,7 +40,8 @@ if not Path(args["output"]).exists():
 # select product_ids
 with open(args['file'], 'r') as f:
     pids = f.read().splitlines()
-
+    pids = random.sample(pids, 600) # randomly select 600 pids
+    
 # remove .fits
 pids = [pid[:-5] for pid in pids]     
 
@@ -160,7 +162,7 @@ if __name__  == "__main__":
         print(f"started at {time.strftime('%X')}")
         
         # launch downloads over cpus
-        futures = {executor.submit(query_and_download_harps, pid) for pid in pids[:10]}
+        futures = {executor.submit(query_and_download_harps, pid) for pid in pids}
     
     print(f"finished at {time.strftime('%X')}")
     print("Downloaded all files.")

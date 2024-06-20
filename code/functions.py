@@ -67,7 +67,9 @@ def doppler_shift(s_weight,batch_size,wave,berv_ref_init_s):
 
 # Const is a scaling parameter found by average flux of training spetra in log space. 
 # Import the scaling parameter from preproc data
-pkl_file = open('../Preproc/Preproc_const.pkl', 'rb')
+# pkl_file = open('../preproc/preproc_const.pkl', 'rb')
+pkl_file = open('/projects/data/HARPS/solar/2022/preproc/preproc_const.pkl', 'rb')
+
 const = pickle.load(pkl_file)
 pkl_file.close()
 

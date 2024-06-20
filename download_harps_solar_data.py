@@ -152,8 +152,8 @@ def check_for_missing_files(entry):
                 break
     
     # clear tar files (?)
-    # for f in glob.glob(f"{os.path.join(args['output'], entry)}/*.tar"):
-    #    os.remove(f)
+    # for f in glob.glob(f"{os.path.join(args['output'], entry)}/*.tar"):
+    #     os.remove(f)
 
 if __name__  == "__main__":
 

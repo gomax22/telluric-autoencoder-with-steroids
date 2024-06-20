@@ -59,7 +59,8 @@ def telluric_fit(flux,wave):
     AE_interp = np.zeros([number_of_corrections,n_apertures,P])
 
     #Loading AE tellurics (extracted endmembers from autoencoder)
-    pkl_file = open('../tellurics/tellurics.pkl', 'rb')
+    # pkl_file = open('../tellurics/tellurics.pkl', 'rb')
+    pkl_file = open('/projects/data/HARPS/solar/2022/output/tellurics.pkl', 'rb')
     data = pickle.load(pkl_file)
     pkl_file.close()
 
